@@ -1,0 +1,145 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Algerian Darija",
+  "scopeName": "source.dza",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#booleans"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#identifiers"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.dza",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.dza",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.dza",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.dza",
+          "match": "\\bكاش_كاين\\b"
+        },
+        {
+          "name": "keyword.control.repeat.dza",
+          "match": "\\bمدام\\b"
+        },
+        {
+          "name": "support.function.builtin.dza",
+          "match": "\\bوري\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.dza",
+          "match": "\\b(صح|غلط)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.dza",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.dza",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.dza",
+          "match": "(&&|\\|\\||!)"
+        },
+        {
+          "name": "keyword.operator.comparison.dza",
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.assignment.dza",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.arithmetic.dza",
+          "match": "(\\+|\\-|\\*|\\/)"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.comma.dza",
+          "match": ","
+        },
+        {
+          "name": "punctuation.terminator.statement.dza",
+          "match": ";"
+        },
+        {
+          "name": "punctuation.section.block.begin.dza",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.section.block.end.dza",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.definition.parameters.begin.dza",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.definition.parameters.end.dza",
+          "match": "\\)"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.dza",
+          "match": "[\\p{L}_][\\p{L}\\p{N}_]*",
+          "u": true
+        }
+      ]
+    }
+  }
+}

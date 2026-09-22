@@ -1,0 +1,39 @@
+{
+  "Variable Declaration": {
+    "prefix": ["كاش_كاين", "kash", "var"],
+    "body": [
+      "كاش_كاين ${1:name};"
+    ],
+    "description": "Declare a variable (كاش_كاين)"
+  },
+  "While Loop": {
+    "prefix": ["مدام", "madam", "while"],
+    "body": [
+      "مدام (${1:condition}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "While loop (مدام)"
+  },
+  "Print Output": {
+    "prefix": ["وري", "wari", "print"],
+    "body": [
+      "وري(${1:expression});"
+    ],
+    "description": "Print to output (وري)"
+  },
+  "Boolean True": {
+    "prefix": ["صح", "true"],
+    "body": [
+      "صح"
+    ],
+    "description": "Boolean true (صح)"
+  },
+  "Boolean False": {
+    "prefix": ["غلط", "false"],
+    "body": [
+      "غلط"
+    ],
+    "description": "Boolean false (غلط)"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "dza-lang",
+  "displayName": "Algerian Darija (DZA) Language Support",
+  "description": "VS Code extension and language runtime for Algerian Darija programming language",
+  "version": "1.0.0",
+  "publisher": "rahmoni",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "dza",
+        "aliases": [
+          "DZA",
+          "Darija",
+          "dza"
+        ],
+        "extensions": [
+          ".dza"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dza",
+        "scopeName": "source.dza",
+        "path": "./syntaxes/dza.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "dza.runFile",
+        "title": "DZA: Run File",
+        "category": "DZA",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "dza.runFile",
+          "when": "resourceExtname == .dza",
+          "group": "navigation"
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "dza",
+        "path": "./snippets/dza.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "run:file": "tsx src/cli.ts",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.80.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.5"
+  }
+}
