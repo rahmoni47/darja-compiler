@@ -1,17 +1,38 @@
 {
   "name": "dza-lang",
   "displayName": "Algerian Darija (DZA) Language Support",
-  "description": "VS Code extension and language runtime for Algerian Darija programming language",
+  "description": "A small experimental programming language that lets you write code using Algerian Darija.",
   "version": "1.0.0",
-  "publisher": "rahmoni",
+  "publisher": "rahmonidev",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahmoni47/darja-compiler"
+  },
+  "homepage": "https://github.com/rahmoni47/darja-compiler",
+  "bugs": {
+    "url": "https://github.com/rahmoni47/darja-compiler/issues"
+  },
+  "keywords": [
+    "Algerian",
+    "Algerian Darija",
+    "Darija",
+    "DZA",
+    "Arabic",
+    "programming language",
+    "Algeria"
+  ],
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
-    "Programming Languages",
-    "Snippets"
+    "Programming Languages"
   ],
   "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:dza",
+    "onCommand:dza.runFile"
+  ],
   "contributes": {
     "languages": [
       {
@@ -69,6 +90,7 @@
   "devDependencies": {
     "@types/node": "^20.14.0",
     "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^4.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.4.5"
   }
